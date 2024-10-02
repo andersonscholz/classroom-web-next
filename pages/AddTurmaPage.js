@@ -14,7 +14,7 @@ const AddTurmaPage = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${API_URL}/turmas/criar`, {
+            await fetch(`${API_URL}/turmas/criar`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

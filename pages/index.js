@@ -8,19 +8,15 @@ import Card from '../src/components/Card';
 
 const MateriasPage = () => {
     const [materias, setMaterias] = useState([]);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchMaterias = async () => {
             try {
-                const response = await fetch(`${API_URL}/turmas`);
-                if (!response.ok) {
-                    throw new Error('Erro ao buscar as matérias');
-                }
+                const response = await fetch(`${API_URL}/turmas`);                
                 const data = await response.json();
                 setMaterias(data);
             } catch (err) {
-                setError(err.message);
+                console.log('Ocorreu um erro ao buscar as unidades: ' + err);
             }
         };
 
@@ -29,13 +25,13 @@ const MateriasPage = () => {
 
     const deleteMateria = async (id) => {
         try {
-            const response = await fetch(`${API_URL}/turmas/deletar/${id}`, {
+            await fetch(`${API_URL}/turmas/deletar/${id}`, {
                 method: 'DELETE',
             });
 
             setMaterias(materias.filter(materia => materia.id !== id));
         } catch (err) {
-            setError(err.message);
+            console.log('Ocorreu um erro ao deletar as unidades: ' +err);
         }
     };
 
