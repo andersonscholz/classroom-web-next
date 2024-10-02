@@ -25,7 +25,7 @@ const AddTurmaPage = () => {
             router.push('/');
 
         } catch (err) {
-            setError(err.message);
+            console.log('Ocorreu um erro em AddTurmaPage: '+err);
         }
     };
 

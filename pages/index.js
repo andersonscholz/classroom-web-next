@@ -16,7 +16,7 @@ const MateriasPage = () => {
                 const data = await response.json();
                 setMaterias(data);
             } catch (err) {
-                console.log('Ocorreu um erro ao buscar as unidades: ' + err);
+                console.log('Ocorreu um erro ao buscar as unidades em index.js: ' + err);
             }
         };
 
@@ -31,7 +31,7 @@ const MateriasPage = () => {
 
             setMaterias(materias.filter(materia => materia.id !== id));
         } catch (err) {
-            console.log('Ocorreu um erro ao deletar as unidades: ' +err);
+            console.log('Ocorreu um erro ao deletar as unidades em index.js: ' +err);
         }
     };
 
