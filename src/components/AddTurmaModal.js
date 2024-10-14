@@ -1,14 +1,11 @@
 "use client";
 
 import React, { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import API_URL from '../src/config.js';
-import Navbar from '../src/components/Navbar.js';
+import API_URL from '@/.env';
 
-const AddTurmaPage = () => {
+const AddTurmaModal = ({ isOpen, onClose, onAddSuccess }) => {
     const [nome, setNome] = useState('');
     const [curso, setCurso] = useState('');
-    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -22,21 +19,19 @@ const AddTurmaPage = () => {
                 body: JSON.stringify({ nome, curso }),
             });
 
-            router.push('/');
+            onAddSuccess();
+            onClose();
 
         } catch (err) {
-            console.log('Ocorreu um erro em AddTurmaPage: '+err);
+            console.log('Ocorreu um erro em AddTurmaModal: '+err);
         }
     };
+    if (!isOpen) return null;
 
     return (
-        <div>
-            <header>
-                <Navbar />
-            </header>
-            <main className="main">
+        <div className="modal-overlay">
+            <div className="modal-content">
                 <h2>Adicionar Nova Turma</h2>
-                <br />
                 <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="nome">Nome da Turma:</label><br />
@@ -59,10 +54,11 @@ const AddTurmaPage = () => {
                         />
                     </div>
                     <button className='button-form' type="submit">Adicionar</button>
+                    <button type="button" onClick={onClose}>Fechar</button>
                 </form>
-            </main>
+            </div>
         </div>
     );
 };
 
-export default AddTurmaPage;
+export default AddTurmaModal;

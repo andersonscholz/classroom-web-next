@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-const Navbar = () => {
+const Navbar = ({ setIsModalOpen }) => {
     return (
         <header>
             <link
@@ -19,7 +19,7 @@ const Navbar = () => {
                     <span className="brand-text">Classroom</span>
                 </section>
                 <section className="navbar-menu">
-                    <Link href="./AddTurmaPage" className="material-icons add-icon">add</Link>
+                    <button onClick={() => setIsModalOpen(true)} className="material-icons add-icon">add</button>
                     <span className="material-icons apps-icon">apps</span>
                     <span className="material-icons big-img account-icon">account_circle</span>
                 </section>
