@@ -41,11 +41,7 @@ const MateriasPage = () => {
             <main className="main">
                 <section className="card-section">
                     {materias.map((materia) => (
-                        <Card 
-                            key={materia.id} 
-                            materia={materia} 
-                            onDelete={deleteMateria} 
-                        />
+                        <Card key={materia.id} materia={materia} onDelete={deleteMateria} />
                     ))}
                 </section>
             </main>

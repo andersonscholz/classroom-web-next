@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ionic/react": "^8.3.2",
+    "@ionic/react-router": "^8.3.2",
     "bootstrap": "^5.3.3",
     "next": "14.2.13",
     "react": "^18",
