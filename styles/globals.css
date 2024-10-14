@@ -36,6 +36,8 @@ input {
   font-size: 16px;
   border: 1px solid #dadce0;
   border-radius: 5px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 input:focus {
@@ -51,7 +53,8 @@ input:focus {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  max-width: 220px;
+  width: 45%;
+  margin: 0;
 }
 
 .button-form:hover {
@@ -78,6 +81,22 @@ input:focus {
   background: white;
   padding: 20px;
   border-radius: 8px;
-  max-width: 500px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-content form {
   width: 100%;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }

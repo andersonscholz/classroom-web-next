@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 
 const Navbar = ({ setIsModalOpen }) => {
     return (
@@ -10,7 +9,7 @@ const Navbar = ({ setIsModalOpen }) => {
             />
             <nav className="navbar">
                 <section className="navbar-brand">
-                    <Link href="./" className="material-icons menu-icon">menu</Link>
+                    <div className="material-icons menu-icon">menu</div>
                     <img
                         className="brand-logo"
                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/368px-Google_2015_logo.svg.png"

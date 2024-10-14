@@ -33,8 +33,7 @@ const AddTurmaModal = ({ isOpen, onClose, onAddSuccess }) => {
             <div className="modal-content">
                 <h2>Adicionar Nova Turma</h2>
                 <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="nome">Nome da Turma:</label><br />
+                        <label>Nome da Turma</label>
                         <input
                             type="text"
                             id="nome"
@@ -42,9 +41,7 @@ const AddTurmaModal = ({ isOpen, onClose, onAddSuccess }) => {
                             onChange={(e) => setNome(e.target.value)}
                             required
                         />
-                    </div>
-                    <div>
-                        <label htmlFor="curso">Curso:</label><br />
+                        <label>Curso</label>
                         <input
                             type="text"
                             id="curso"
@@ -52,9 +49,10 @@ const AddTurmaModal = ({ isOpen, onClose, onAddSuccess }) => {
                             onChange={(e) => setCurso(e.target.value)}
                             required
                         />
-                    </div>
+                    <div className="button-container">
                     <button className='button-form' type="submit">Adicionar</button>
-                    <button type="button" onClick={onClose}>Fechar</button>
+                    <button type="button" className="button-form" onClick={onClose}>Fechar</button>
+                    </div>
                 </form>
             </div>
         </div>
