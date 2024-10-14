@@ -11,7 +11,7 @@ const Card = ({ materia, onDelete }) => {
             </div>
             <div className="card-body"></div>
             <div className="card-footer">
-                <span className="card-remove material-icons-outlined" onClick={() => onDelete(materia.id)}>
+                <span className="card-icon material-icons-outlined" onClick={() => onDelete(materia.id)}>
                     delete
                 </span>
             </div>

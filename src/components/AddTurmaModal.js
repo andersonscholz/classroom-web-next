@@ -50,7 +50,7 @@ const AddTurmaModal = ({ isOpen, onClose, onAddSuccess }) => {
                             required
                         />
                     <div className="button-container">
-                    <button className='button-form' type="submit">Adicionar</button>
+                    <button className='button-form' type="submit">Salvar</button>
                     <button type="button" className="button-form" onClick={onClose}>Fechar</button>
                     </div>
                 </form>
