@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ materia, onDelete }) => {
+const Card = ({ materia, onDelete, onEdit }) => {
     return (
         <div className="card">
             <div className="card-header">
@@ -13,6 +13,9 @@ const Card = ({ materia, onDelete }) => {
             <div className="card-footer">
                 <span className="card-icon material-icons-outlined" onClick={() => onDelete(materia.id)}>
                     delete
+                </span>
+                <span className="card-icon material-icons-outlined" onClick={() => onEdit(materia)}>
+                    update
                 </span>
             </div>
         </div>

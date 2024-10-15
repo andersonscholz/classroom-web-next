@@ -9,6 +9,7 @@ import AddTurmaModal from '../src/components/AddTurmaModal';
 const MateriasPage = () => {
     const [materias, setMaterias] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [turmaEditada, setTurmaEditada] = useState(null);
 
     useEffect(() => {
         fetchMaterias();
@@ -38,6 +39,12 @@ const MateriasPage = () => {
     const handleAddSuccess = () => {
         fetchMaterias();
         setIsModalOpen(false);
+        setTurmaEditada(null);
+    };
+
+    const handleEdit = (materia) => {
+        setTurmaEditada(materia);
+        setIsModalOpen(true);
     };
 
     return (
@@ -48,10 +55,11 @@ const MateriasPage = () => {
                     isOpen={isModalOpen} 
                     onClose={() => setIsModalOpen(false)} 
                     onAddSuccess={handleAddSuccess}
+                    turmaEditada={turmaEditada}
                 />
                 <section className="card-section">
                     {materias.map((materia) => (
-                        <Card key={materia.id} materia={materia} onDelete={deleteMateria} />
+                        <Card key={materia.id} materia={materia} onDelete={deleteMateria} onEdit={handleEdit} />
                     ))}
                 </section>
             </main>
