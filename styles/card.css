@@ -75,3 +75,21 @@
     margin-bottom: 30px;
     margin-right: 15px;
   }
+
+  @media (max-width: 768px) {
+    .card {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .card-section {
+       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+  }
