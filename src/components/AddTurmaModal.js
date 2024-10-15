@@ -12,10 +12,14 @@ const AddTurmaModal = ({ isOpen, onClose, onAddSuccess, turmaEditada }) => {
             setNome(turmaEditada.nome);
             setCurso(turmaEditada.curso);
         } else {
-            setNome('');
-            setCurso('');
+            resetFields();
         }
-    }, [turmaEditada]);
+    }, [turmaEditada, isOpen]);
+
+    const resetFields = () => {
+        setNome('');
+        setCurso('');
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -32,6 +36,7 @@ const AddTurmaModal = ({ isOpen, onClose, onAddSuccess, turmaEditada }) => {
             });
 
             onAddSuccess();
+            resetFields(); // Resetando campos após o sucesso
             onClose();
 
         } catch (err) {
@@ -39,8 +44,7 @@ const AddTurmaModal = ({ isOpen, onClose, onAddSuccess, turmaEditada }) => {
         }
     };
     const handleClose = () => {
-        setNome('');
-        setCurso('');
+        resetFields(); // Resetando campos ao fechar
         onClose();
     };
 

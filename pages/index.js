@@ -47,13 +47,21 @@ const MateriasPage = () => {
         setIsModalOpen(true);
     };
 
+    const handleOpenModal = () => {
+        setTurmaEditada(null);
+        setIsModalOpen(true);
+    };
+
     return (
         <div>
-            <Navbar setIsModalOpen={setIsModalOpen} />
+            <Navbar setIsModalOpen={handleOpenModal} />
             <main className="main">
-                <AddTurmaModal 
-                    isOpen={isModalOpen} 
-                    onClose={() => setIsModalOpen(false)} 
+                <AddTurmaModal
+                    isOpen={isModalOpen}
+                    onClose={() => {
+                        setIsModalOpen(false);
+                        setTurmaEditada(null);
+                    }}
                     onAddSuccess={handleAddSuccess}
                     turmaEditada={turmaEditada}
                 />
